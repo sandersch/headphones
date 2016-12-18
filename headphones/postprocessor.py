@@ -1063,7 +1063,7 @@ def renameFiles(albumpath, downloaded_track_list, release):
                      downloaded_track.decode(headphones.SYS_ENCODING, 'replace'),
                      new_file_name.decode(headphones.SYS_ENCODING, 'replace'))
         try:
-            os.rename(downloaded_track, new_file)
+            shutil.move(downloaded_track, new_file)
         except Exception as e:
             logger.error('Error renaming file: %s. Error: %s',
                          downloaded_track.decode(headphones.SYS_ENCODING, 'replace'), e)
